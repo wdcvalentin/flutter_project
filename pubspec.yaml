@@ -37,6 +37,9 @@ dependencies:
   flutter_barcode_scanner: ^2.0.0
 
 dev_dependencies:
+  retrofit_generator: ^2.0.0+3
+  json_serializable: any
+  build_runner: ^2.0.0
   flutter_test:
     sdk: flutter
 

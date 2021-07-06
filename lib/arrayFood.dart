@@ -160,34 +160,6 @@ class ProductFields extends StatelessWidget {
         DataCell(Text('dogzer')),
       ]),
     ]);
-    //   (
-    //   // children: [
-    //   //   TableRow(children: [
-    //   //     Categories(
-    //   //       label: 'Repères nutritionnels pour 100g',
-    //   //     ),
-    //   //     ProductField(
-    //   //       label: 'Matières grasses / lipides',
-    //   //       value: '''0,8g
-    //   //       Faible quantité''',
-    //   //       color: 'green',
-    //   //       divider: true,
-    //   //     ),
-    //   //   ]),
-    //   //   TableRow(children: [
-    //   //     Categories(
-    //   //       label: 'Repères nutritionnels pour 100g',
-    //   //     ),
-    //   //     ProductField(
-    //   //       label: 'Matières grasses / lipides',
-    //   //       value: '''0,8g
-    //   //       Faible quantité''',
-    //   //       color: 'green',
-    //   //       divider: true,
-    //   //     ),
-    //   //   ])
-    //   // ],
-    // );
   }
 }
 

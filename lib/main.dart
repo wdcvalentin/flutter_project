@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/AppColors.dart';
 import 'package:flutter_project/AppIcons.dart';
 import 'package:flutter_project/res/app_vectorial_images.dart';
@@ -7,6 +8,7 @@ import 'productfield.dart';
 import 'caracteristic.dart';
 import 'nutrition.dart';
 import 'arrayFood.dart';
+import 'fetchProduct.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
@@ -36,6 +38,7 @@ class MyApp extends StatelessWidget {
           primaryColorDark: AppColors.blueDark,
           accentColor: AppColors.yellow),
       home: MyHomePage(),
+      // home: Screen(),
     );
   }
 }
@@ -131,8 +134,10 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
                 onPressed: () async {
-                  await FlutterBarcodeScanner.scanBarcode(
-                      '#ff6666', 'Retour', true, ScanMode.DEFAULT);
+                  // await FlutterBarcodeScanner.scanBarcode(
+                  //     '#ff6666', 'Retour', true, ScanMode.DEFAULT);
+                  BlocProvider.of<ProductBloc>(context)
+                      .fetchProduct('5000159484695');
                 },
                 icon: const Icon(
                   AppIcons.barcode,
@@ -201,19 +206,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        //     bottomNavigationBar:
-        //         BottomNavigationBar(
-        //           type: BottomNavigationBarType.fixed,
-        //           items: [
-        //       BottomNavigationBarItem(
-        //           icon: const Icon(AppIcons.tabBarcode), label: "Fiche"),
-        //       BottomNavigationBarItem(
-        //           icon: const Icon(AppIcons.tabFridge), label: "Caractéristique"),
-        //       BottomNavigationBarItem(
-        //           icon: const Icon(AppIcons.tabNutrition), label: "Nutrition"),
-        //       BottomNavigationBarItem(
-        //           icon: Icon(AppIcons.tabArray), label: "Fiche"),
-        //     ]),
       ),
     );
   }
