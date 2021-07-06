@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_project/AppColors.dart';
 import 'package:flutter_project/AppIcons.dart';
 import 'package:flutter_project/res/app_vectorial_images.dart';
 import 'productfield.dart';
 import 'caracteristic.dart';
+import 'nutrition.dart';
+import 'arrayFood.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
@@ -53,7 +54,8 @@ class MyHomePageState extends State<MyHomePage> {
   Widget _homePage = HomePage();
   Widget _detailsScreen = DetailsScreen();
   Widget _caracteristicScreen = CaracteristicScreen();
-  Widget _myProfile = MyProfile();
+  Widget _nutritionScreen = NutritionScreen();
+  Widget _arrayScreen = ArrayScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -86,9 +88,9 @@ class MyHomePageState extends State<MyHomePage> {
     } else if (this.selectedIndex == 1) {
       return this._caracteristicScreen;
     } else if (this.selectedIndex == 2) {
-      return this._myProfile;
+      return this._nutritionScreen;
     } else if (this.selectedIndex == 3) {
-      return this._myProfile;
+      return this._arrayScreen;
     }
     return this._homePage;
   }
@@ -216,41 +218,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-class MyContacts extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Contacts"));
-  }
-}
-
-class MyEmails extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Emails"));
-  }
-}
-
-class MyProfile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Profile"));
-  }
-}
-
-// class _MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//           primaryColor: AppColors.blue,
-//           primaryColorDark: AppColors.blueDark,
-//           accentColor: AppColors.yellow,
-//           fontFamily: 'Avenir'),
-//       home: HomePage(),
-//     );
-//   }
-// }

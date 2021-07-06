@@ -117,7 +117,8 @@ class ProductTitle extends StatelessWidget {
       children: [
         Text(
           product.name ?? '',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 25, color: AppColors.blue),
         ),
         const SizedBox(
           height: 8.0,

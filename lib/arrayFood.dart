@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/AppColors.dart';
-import 'package:flutter_project/AppIcons.dart';
 import 'package:flutter_project/Product.dart';
 import 'package:flutter_project/res/app_images.dart';
 
-class CaracteristicScreen extends StatelessWidget {
-  const CaracteristicScreen({Key? key}) : super(key: key);
+class ArrayScreen extends StatelessWidget {
+  const ArrayScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -145,56 +144,50 @@ class ProductFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Categories(
-          label: 'Ingrédients',
-        ),
-        ProductField(
-          label: 'Légumes',
-          value: 'petits pois 41%, carottes 22%',
-          divider: true,
-        ),
-        ProductField(
-          label: 'Eau',
-          value: '',
-          divider: false,
-        ),
-        ProductField(
-          label: 'Sucre',
-          value: '',
-          divider: false,
-        ),
-        ProductField(
-          label: 'Garniture (2,5%)',
-          value: 'salade, oignon grelot',
-          divider: false,
-        ),
-        ProductField(
-          label: 'Sel',
-          value: '',
-          divider: false,
-        ),
-        ProductField(
-          label: 'Arômes naturels',
-          value: '',
-          divider: false,
-        ),
-        Categories(label: 'Substances allergènes'),
-        ProductField(
-          label: 'Aucune',
-          value: '',
-          divider: false,
-        ),
-        Categories(label: 'Additifs'),
-        ProductField(
-          label: 'Aucune',
-          value: '',
-          divider: false,
-        ),
-      ],
-    );
+    return DataTable(columns: [
+      DataColumn(label: Text('')),
+      DataColumn(label: Text('Pour 100g')),
+      DataColumn(label: Text('Par Part'))
+    ], rows: [
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('dogzer')),
+        DataCell(Text('dogzer')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('dogzer')),
+        DataCell(Text('dogzer')),
+      ]),
+    ]);
+    //   (
+    //   // children: [
+    //   //   TableRow(children: [
+    //   //     Categories(
+    //   //       label: 'Repères nutritionnels pour 100g',
+    //   //     ),
+    //   //     ProductField(
+    //   //       label: 'Matières grasses / lipides',
+    //   //       value: '''0,8g
+    //   //       Faible quantité''',
+    //   //       color: 'green',
+    //   //       divider: true,
+    //   //     ),
+    //   //   ]),
+    //   //   TableRow(children: [
+    //   //     Categories(
+    //   //       label: 'Repères nutritionnels pour 100g',
+    //   //     ),
+    //   //     ProductField(
+    //   //       label: 'Matières grasses / lipides',
+    //   //       value: '''0,8g
+    //   //       Faible quantité''',
+    //   //       color: 'green',
+    //   //       divider: true,
+    //   //     ),
+    //   //   ])
+    //   // ],
+    // );
   }
 }
 
@@ -210,10 +203,8 @@ class Categories extends StatelessWidget {
     return Container(
       child: Text(
         label,
-        style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 15, color: AppColors.blue),
+        style: TextStyle(fontSize: 15, color: AppColors.gray3),
       ),
-      color: AppColors.gray1,
       padding: EdgeInsets.all(10.0),
       alignment: Alignment.center,
     );
@@ -223,11 +214,13 @@ class Categories extends StatelessWidget {
 class ProductField extends StatelessWidget {
   final String label;
   final String value;
+  final String color;
   final bool divider;
 
   ProductField({
     required this.label,
     required this.value,
+    required this.color,
     this.divider = true,
   });
 
@@ -237,20 +230,25 @@ class ProductField extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(25.0),
           child: Row(
             children: [
               Expanded(
                 // flex: 1,
                 child: Text(label,
                     style: TextStyle(
-                        color: AppColors.blue, fontWeight: FontWeight.w600)),
+                        color: AppColors.blue,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13)),
               ),
               Expanded(
-                // flex: 1,
                 child: Text(value,
                     textAlign: TextAlign.end,
-                    style: TextStyle(color: AppColors.gray3)),
+                    style: color == 'green'
+                        ? TextStyle(color: AppColors.ecoScoreB)
+                        : color == 'nutrientLevelModerate'
+                            ? TextStyle(color: AppColors.nutrientKevelModerate)
+                            : TextStyle(color: AppColors.nutrientLevelHigh)),
               ),
             ],
           ),
