@@ -351,6 +351,7 @@ class ButtonsField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
+      // crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
           child: ButtonPreference(label: 'Végétalien', icon: 'check'),
@@ -384,11 +385,7 @@ class ButtonPreference extends StatelessWidget {
             children: <Widget>[
               TextButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => DetailsScreen()),
-                  );
+                  print('hello');
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -396,19 +393,23 @@ class ButtonPreference extends StatelessWidget {
                     vertical: 8.0,
                   ),
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.max,
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       const SizedBox(
-                        width: 10.0,
+                        height: 5,
                       ),
                       icon == 'check'
                           ? const Icon(
-                              Icons.check,
+                              AppIcons.checkmark,
                             )
-                          : const Icon(Icons.cancel_outlined),
+                          : const Icon(AppIcons.close),
+                      const SizedBox(
+                        width: 25,
+                      ),
                       Text(label),
                       const SizedBox(
-                        width: 10.0,
+                        height: 5,
                       ),
                     ],
                   ),

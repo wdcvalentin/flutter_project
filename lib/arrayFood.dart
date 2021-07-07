@@ -57,7 +57,7 @@ class ProductDetails extends StatelessWidget {
           borderRadius: borderRadius,
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 20.0,
+              horizontal: 10.0,
               vertical: 20.0,
             ),
             child: Column(

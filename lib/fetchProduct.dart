@@ -1,6 +1,9 @@
 // En entrée
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'Product.dart';
+import 'network_api.dart';
+import 'network_product.dart';
 
 abstract class ProductEvent {}
 
@@ -40,13 +43,16 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       print(event.barcode);
       String barcode = event.barcode;
 
+      NetworkProduct networkProduct = await OpenFoodFactsAPI(
+        Dio(),
+        baseUrl: 'https://api.formation-android.fr/v2/',
+      ).findProduct(barcode: barcode);
       // yield ajoute une valeur à la sortie du stream of the surrounding async* function.
       // It's like return, but doesn't terminate the function.
       // C comme un return qui ne sort pas de la function
-      // Requête
       yield ProductAvailableState(Product(
         barcode: barcode,
-        name: 'Petits pois et carottes',
+        name: networkProduct.response!.name,
         brands: <String>['Cassegrain'],
       ));
     }

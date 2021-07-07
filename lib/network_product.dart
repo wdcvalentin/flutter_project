@@ -5,7 +5,6 @@ part 'network_product.g.dart';
 class NetworkProduct {
   final NetworkProductResponse? response;
   final Object? error;
-
   NetworkProduct(this.response, this.error);
 
   factory NetworkProduct.fromJson(Map<String, dynamic> json) =>
