@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
           primaryColor: AppColors.blue,
           primaryColorDark: AppColors.blueDark,
           accentColor: AppColors.yellow),
-      // home: MyHomePage(),
-      home: Screen(),
+      home: MyHomePage(),
+      // home: Screen(),
     );
   }
 }

@@ -150,48 +150,48 @@ class ProductFields extends StatelessWidget {
       DataColumn(label: Text('Par part')),
     ], rows: [
       DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('dogzer')),
+        DataCell(Text('Energie')),
+        DataCell(Text('293 kj')),
         DataCell(Text('?')),
       ]),
       DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
-        DataCell(Text('?')),
-      ]),
-      DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
+        DataCell(Text('Matières grasses')),
+        DataCell(Text('0,8 g')),
         DataCell(Text('?')),
       ]),
       DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
-        DataCell(Text('?')),
-      ]),
-      DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
+        DataCell(Text('dont Acides gras saturés')),
+        DataCell(Text('0,8 g')),
         DataCell(Text('?')),
       ]),
       DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
-        DataCell(Text('?')),
-      ]),
-      DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
+        DataCell(Text('Glucides')),
+        DataCell(Text('8,4 g')),
         DataCell(Text('?')),
       ]),
       DataRow(cells: [
-        DataCell(Text('dogy')),
-        DataCell(Text('?')),
+        DataCell(Text('dont Sucres')),
+        DataCell(Text('5,2 g')),
         DataCell(Text('?')),
       ]),
       DataRow(cells: [
-        DataCell(Text('dogy')),
+        DataCell(Text('Fibres alimentaires')),
+        DataCell(Text('5,2 g')),
         DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('Protéines')),
+        DataCell(Text('4,2 g')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('Sel')),
+        DataCell(Text('0,75 g')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('Sodium')),
+        DataCell(Text('0,295 g')),
         DataCell(Text('?')),
       ]),
     ]);
