@@ -57,11 +57,11 @@ class ProductDetails extends StatelessWidget {
           borderRadius: borderRadius,
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 10.0,
+              horizontal: 20.0,
               vertical: 20.0,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ProductTitle(),
                 ProductFields(),
@@ -147,17 +147,52 @@ class ProductFields extends StatelessWidget {
     return DataTable(columns: [
       DataColumn(label: Text('')),
       DataColumn(label: Text('Pour 100g')),
-      DataColumn(label: Text('Par Part'))
+      DataColumn(label: Text('Par part')),
     ], rows: [
       DataRow(cells: [
         DataCell(Text('dogy')),
         DataCell(Text('dogzer')),
-        DataCell(Text('dogzer')),
+        DataCell(Text('?')),
       ]),
       DataRow(cells: [
         DataCell(Text('dogy')),
-        DataCell(Text('dogzer')),
-        DataCell(Text('dogzer')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('dogy')),
+        DataCell(Text('?')),
+        DataCell(Text('?')),
       ]),
     ]);
   }

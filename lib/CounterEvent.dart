@@ -59,6 +59,7 @@ class Screen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
+                      print(context);
                       BlocProvider.of<CounterBloc>(context).incrementCounter();
                     },
                     child: Text('+1'),

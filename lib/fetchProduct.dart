@@ -30,14 +30,19 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   ProductBloc() : super(InitialState());
 
   void fetchProduct(String barcode) {
+    print('dans fetch product');
     add(FetchProductEvent(barcode));
   }
 
   @override
   Stream<ProductState> mapEventToState(ProductEvent event) async* {
     if (event is FetchProductEvent) {
+      print(event.barcode);
       String barcode = event.barcode;
 
+      // yield ajoute une valeur à la sortie du stream of the surrounding async* function.
+      // It's like return, but doesn't terminate the function.
+      // C comme un return qui ne sort pas de la function
       // Requête
       yield ProductAvailableState(Product(
         barcode: barcode,

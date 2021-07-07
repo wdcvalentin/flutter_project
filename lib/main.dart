@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/AppColors.dart';
 import 'package:flutter_project/AppIcons.dart';
 import 'package:flutter_project/res/app_vectorial_images.dart';
+import 'CounterEvent.dart';
 import 'productfield.dart';
 import 'caracteristic.dart';
 import 'nutrition.dart';
@@ -37,8 +38,8 @@ class MyApp extends StatelessWidget {
           primaryColor: AppColors.blue,
           primaryColorDark: AppColors.blueDark,
           accentColor: AppColors.yellow),
-      home: MyHomePage(),
-      // home: Screen(),
+      // home: MyHomePage(),
+      home: Screen(),
     );
   }
 }
@@ -131,19 +132,25 @@ class HomePage extends StatelessWidget {
           ),
           actions: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: IconButton(
-                onPressed: () async {
-                  // await FlutterBarcodeScanner.scanBarcode(
-                  //     '#ff6666', 'Retour', true, ScanMode.DEFAULT);
-                  BlocProvider.of<ProductBloc>(context)
-                      .fetchProduct('5000159484695');
-                },
-                icon: const Icon(
-                  AppIcons.barcode,
-                ),
-              ),
-            )
+                padding: const EdgeInsets.all(8.0),
+                child: BlocProvider(
+                    create: (_) => ProductBloc(),
+                    child: BlocBuilder<ProductBloc, ProductState>(
+                        builder: (BuildContext context, ProductState state) {
+                      return IconButton(
+                        onPressed: ()
+                            // async
+                            {
+                          // await FlutterBarcodeScanner.scanBarcode(
+                          //     '#ff6666', 'Retour', true, ScanMode.DEFAULT);
+                          BlocProvider.of<ProductBloc>(context)
+                              .fetchProduct('5000159484695');
+                        },
+                        icon: const Icon(
+                          AppIcons.barcode,
+                        ),
+                      );
+                    })))
           ],
         ),
         body: Center(
